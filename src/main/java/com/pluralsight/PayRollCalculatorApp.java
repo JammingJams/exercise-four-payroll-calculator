@@ -15,8 +15,14 @@ public class PayRollCalculatorApp {
         System.out.print("Enter pay rate: ");
         double payRate = keyboard.nextDouble();
 
-        System.out.printf("Your name is %s and your gross income is $%.2f", firstName, hoursWorked * payRate);
+        double grossIncome = payRate * hoursWorked;
 
+        if (hoursWorked > 40) {
+            System.out.printf("Your name is %s and your BONUS gross income is $%.2f", firstName, grossIncome * 1.5);
+        }
+        else {
+            System.out.printf("Your name is %s and your gross income is $%.2f", firstName, grossIncome);
+        }
 
 
     }
